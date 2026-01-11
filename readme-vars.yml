@@ -41,14 +41,14 @@ app_setup_block: |
   * https://yourhost:3001/
 
   >[!NOTE]
-  >This image is for a web accessible version of Steam to be played through a web browser it is in development and has oddities, if you want a fully flushed out Moonlight couch solution please consider [Wolf](https://games-on-whales.github.io/wolf/stable/user/quickstart.html) or another non Docker solution.
+  >This image is for a web accessible version of Steam to be played through a web browser it is in development and has oddities, if you want a fully flushed out Moonlight couch solution please consider [Wolf](https://games-on-whales.github.io/wolf/stable/user/quickstart.html) or another non Docker solution. Moonlight clients have major advantages over using a web browser.
 
   >[!NOTE]
-  >NVIDIA is not working correctly for many games, for now this image is only for Intel/AMD graphics cards. 
+  >NVIDIA is not workingi yet, for now this image is only for Intel/AMD graphics cards.
 
   ## Gamepad support
 
-  This container leverages a userspace gamepad interposer to provide gamepad support. This will not work with all games. Proton runtimes are the most compatible but not a sure thing as some games require raw uinput calls. You cannot use the "Steam Input" feature on any game as the uinput socket and HID do not exist.
+  This container leverages a userspace gamepad interposer to provide gamepad support. To use a gamepad always force Proton in "Properties>Compatibility" even for Linux native games, "Proton Hotfix" is a good default selection. You cannot use the "Steam Input" feature on any game as the uinput socket and HID do not exist.
 
   ## Gaming mode
 
