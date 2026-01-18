@@ -33,6 +33,7 @@ custom_params:
   - {name: "shm-size", name_compose: "shm_size", value: "1gb", desc: "Recommended for all desktop images."}
 # Selkies blurb settings
 selkies_blurb: true
+show_nvidia: true
 # application setup block
 app_setup_block_enabled: true
 app_setup_block: |
@@ -43,8 +44,19 @@ app_setup_block: |
   >[!NOTE]
   >This image is for a web accessible version of Steam to be played through a web browser it is in development and has oddities, if you want a fully flushed out Moonlight couch solution please consider [Wolf](https://games-on-whales.github.io/wolf/stable/user/quickstart.html) or another non Docker solution. Moonlight clients have major advantages over using a web browser.
 
-  >[!NOTE]
-  >NVIDIA is not working yet, for now this image is only for Intel/AMD graphics cards.
+  ## GPU Support
+
+  Using an Intel/AMD GPU is usually as easy as just passing `--device /dev/dri:/dev/dri`.
+  If you have multiple GPUs you need to pass both the setting for the render node and the encoder IE for the second GPU:
+
+  ```
+  -e DRINODE=/dev/dri/renderD129 \
+  -e DRI_NODE=/dev/dri/renderD129
+  ```
+
+  Nvidia support only works on 580 and up full proprietary drivers (no MIT/GPL) with `nvidia-drm.modeset=1` kernel parameter set. You must ensure the card is initialized before running a container so on headless systems run `nvidia-modprobe --modeset` from the host even with this kernel parameter set, this only needs to be run once per boot.
+
+  These modifications for NVIDIA are for Wayland to function properly and have nothing to do with the Docker runtime. If you are using compose it is important to run `sudo nvidia-ctk runtime configure --runtime=docker` this is a persistent setting and only needs to run once.
 
   ## Gamepad support
 
@@ -125,4 +137,5 @@ init_diagram: |
   "steam:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "17.01.26:", desc: "Document Nvidia support."}
   - {date: "09.01.26:", desc: "Initial Version."}
