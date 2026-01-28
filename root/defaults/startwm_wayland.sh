@@ -33,6 +33,7 @@ monitor_proton_dirs() {
 (monitor_proton_dirs) &
 
 # Start DE
+ulimit -c 0
 export XCURSOR_THEME=breeze_cursors
 export XCURSOR_SIZE=24
 export XKB_DEFAULT_LAYOUT=us
