@@ -39,6 +39,24 @@ RUN \
     "https://cdn.fastly.steamstatic.com/client/installer/steam.deb" && \
   apt-get install -y \
     /tmp/steam.deb && \
+  echo "**** install umu run ****" && \
+  UMU_RELEASE=$(curl -sX GET "https://api.github.com/repos/Open-Wine-Components/umu-launcher/releases/latest" \
+    | awk '/tag_name/{print $4;exit}' FS='[""]') && \
+  curl -o \
+    /tmp/umu.deb -L \
+    "https://github.com/Open-Wine-Components/umu-launcher/releases/download/${UMU_RELEASE}/python3-umu-launcher_${UMU_RELEASE}-1_amd64_debian-13.deb" && \
+  apt-get install -y \
+    /tmp/umu.deb && \
+  echo "**** install protonupqt ****" && \
+  PRQT_RELEASE=$(curl -sX GET "https://api.github.com/repos/DavidoTek/ProtonUp-Qt/releases/latest" \
+    | awk '/tag_name/{print $4;exit}' FS='[""]') && \
+  curl -o \
+    /tmp/prqt.app -L \
+    "https://github.com/DavidoTek/ProtonUp-Qt/releases/download/${PRQT_RELEASE}/ProtonUp-Qt-$(echo ${PRQT_RELEASE} | sed 's/^v//g')-x86_64.AppImage" && \
+  cd /tmp &&  \
+  chmod +x prqt.app && \
+  ./prqt.app --appimage-extract && \
+  mv squashfs-root /opt/protonup-qt && \
   echo "**** install 32 bit interposers ****" && \
   cd /tmp && \
   git clone \
