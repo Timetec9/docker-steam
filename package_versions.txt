@@ -6,6 +6,8 @@ aiohappyeyeballs                                                              2.
 aiohttp                                                                       3.13.3                                  python                      
 aioice                                                                        0.10.2                                  python                      
 aiosignal                                                                     1.4.0                                   python                      
+apparmor                                                                      4.1.0-1                                 deb                         
+apparmor-profiles                                                             4.1.0-1                                 deb                         
 apt                                                                           3.0.3                                   deb                         
 apt-transport-https                                                           3.0.3                                   deb                         
 apt-utils                                                                     3.0.3                                   deb                         
@@ -26,8 +28,12 @@ bsdextrautils                                                                 2.
 bsdutils                                                                      1:2.41-5                                deb                         
 bubblewrap                                                                    0.11.0-2                                deb                         
 ca-certificates                                                               20250419                                deb                         
+cachetools                                                                    6.2.0                                   python                      
 catatonit                                                                     0.2.1-2+b7                              deb                         
+cbor2                                                                         5.6.5                                   python                      
+certifi                                                                       2025.8.3                                python                      
 cffi                                                                          2.0.0                                   python                      
+charset-normalizer                                                            3.4.3                                   python                      
 cli                                                                           UNKNOWN                                 binary                      
 cli-32                                                                        UNKNOWN                                 binary                      
 cli-64                                                                        UNKNOWN                                 binary                      
@@ -603,10 +609,12 @@ gui-arm64                                                                     UN
 gzip                                                                          1.13-1                                  deb                         
 hicolor-icon-theme                                                            0.18-2                                  deb                         
 hostname                                                                      3.25                                    deb                         
+idna                                                                          3.10                                    python                      
 idna                                                                          3.11                                    python                      
 ifaddr                                                                        0.2.0                                   python                      
 importlib-metadata                                                            8.7.1                                   python                      
 init-system-helpers                                                           1.69~deb13u1                            deb                         
+inputs                                                                        0.5                                     python                      
 intel-media-va-driver                                                         25.2.3+dfsg1-1                          deb                         
 iproute2                                                                      6.15.0-1                                deb                         
 iptables                                                                      1.8.11-2                                deb                         
@@ -1154,23 +1162,37 @@ pulseaudio                                                                    17
 pulseaudio-utils                                                              17.0+dfsg1-2+b1                         deb                         
 pulsectl                                                                      24.12.0                                 python                      
 pycparser                                                                     3.0                                     python                      
+pycryptodomex                                                                 3.23.0                                  python                      
 pyee                                                                          13.0.0                                  python                      
 pylibsrtp                                                                     1.0.0                                   python                      
 pynput                                                                        1.8.1                                   python                      
 pyopenssl                                                                     25.3.0                                  python                      
+pyside6-essentials                                                            6.9.2                                   python                      
+python                                                                        3.10.4                                  binary                      
 python-apt                                                                    3.0.0                                   python                      
 python-apt-common                                                             3.0.0                                   deb                         
-python-xlib                                                                   0.33                                    python                      
+python-xlib                                                                   0.33                                    python     (+1 duplicate)   
 python3                                                                       3.13.5-1                                deb                         
 python3-apt                                                                   3.0.0                                   deb                         
+python3-cbor2                                                                 5.6.5-1                                 deb                         
 python3-minimal                                                               3.13.5-1                                deb                         
 python3-pip-whl                                                               25.1.1+dfsg-1                           deb                         
+python3-pyzstd                                                                0.17.0+ds-1                             deb                         
 python3-setuptools-whl                                                        78.1.1-0.1                              deb                         
+python3-truststore                                                            0.10.1-1                                deb                         
+python3-umu-launcher                                                          1.3.0-1                                 deb                         
+python3-urllib3                                                               2.3.0-3+deb13u1                         deb                         
 python3-venv                                                                  3.13.5-1                                deb                         
+python3-xlib                                                                  0.33-3                                  deb                         
+python3-xxhash                                                                3.2.0-1+b5                              deb                         
 python3.13                                                                    3.13.5-2                                deb                         
 python3.13-minimal                                                            3.13.5-2                                deb                         
 python3.13-venv                                                               3.13.5-2                                deb                         
+pyxdg                                                                         0.28                                    python                      
+pyyaml                                                                        6.0.2                                   python                      
+pyzstd                                                                        0.17.0                                  python                      
 readline-common                                                               8.2-6                                   deb                         
+requests                                                                      2.32.5                                  python                      
 resenje.org/singleflight                                                      v0.4.3                                  go-module                   
 rpcsvc-proto                                                                  1.4.3-1                                 deb                         
 seatd                                                                         0.9.1-1                                 deb                         
@@ -1180,15 +1202,17 @@ sensible-utils                                                                0.
 setuptools                                                                    80.10.2                                 python                      
 sgml-base                                                                     1.31+nmu1                               deb                         
 shared-mime-info                                                              2.4-5+b2                                deb                         
+shiboken6                                                                     6.9.2                                   python                      
 sigs.k8s.io/json                                                              v0.0.0-20241014173422-cfa47c3a1cc8      go-module  (+2 duplicates)  
 sigs.k8s.io/randfill                                                          v1.0.0                                  go-module  (+1 duplicate)   
 sigs.k8s.io/structured-merge-diff/v6                                          v6.3.0                                  go-module  (+1 duplicate)   
 sigs.k8s.io/yaml                                                              v1.6.0                                  go-module  (+3 duplicates)  
-six                                                                           1.17.0                                  python                      
+six                                                                           1.17.0                                  python     (+1 duplicate)   
 sqv                                                                           1.3.0-3+b2                              deb                         
 ssl-cert                                                                      1.1.3                                   deb                         
 stdlib                                                                        go1.24.11                               go-module  (+4 duplicates)  
 stdlib                                                                        go1.25.6                                go-module  (+3 duplicates)  
+steam                                                                         1.6.1                                   python                      
 steam-launcher                                                                1:1.0.0.85                              deb                         
 steam-libs                                                                    1:1.0.0.83~ds-3                         deb        (+1 duplicate)   
 steam-libs-i386                                                               1:1.0.0.83~ds-3                         deb                         
@@ -1203,10 +1227,15 @@ tags.cncf.io/container-device-interface                                       v1
 tags.cncf.io/container-device-interface/specs-go                              v1.1.0                                  go-module  (+2 duplicates)  
 tar                                                                           1.35+dfsg-3.1                           deb                         
 tomli                                                                         2.4.0                                   python                      
+truststore                                                                    0.10.1                                  python                      
 typing-extensions                                                             4.15.0                                  python                      
 tzdata                                                                        2025b-4+deb13u1                         deb                         
 udev                                                                          257.9-1~deb13u1                         deb                         
+umu-launcher                                                                  1.3.0                                   python                      
+urllib3                                                                       1.26.20                                 python                      
+urllib3                                                                       2.3.0                                   python                      
 util-linux                                                                    2.41-5                                  deb                         
+vdf                                                                           4.0                                     python                      
 vulkan-tools                                                                  1.4.304.0+dfsg1-1                       deb                         
 watchdog                                                                      6.0.0                                   python                      
 websockets                                                                    16.0                                    python                      
@@ -1250,9 +1279,11 @@ xterm                                                                         39
 xutils                                                                        1:7.7+24+deb13u1                        deb                         
 xvfb                                                                          2:21.1.16-1.3+deb13u1                   deb                         
 xwayland                                                                      2:24.1.6-1                              deb                         
+xxhash                                                                        0.0.0                                   python                      
 xz-utils                                                                      5.8.1-1                                 deb                         
 yarl                                                                          1.22.0                                  python                      
 zenity                                                                        4.1.90-1                                deb                         
 zenity-common                                                                 4.1.90-1                                deb                         
 zipp                                                                          3.23.0                                  python                      
 zlib1g                                                                        1:1.3.dfsg+really1.3.1-1+b1             deb        (+1 duplicate)   
+zstandard                                                                     0.25.0                                  python                      
