@@ -7,7 +7,7 @@ LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DA
 LABEL maintainer="thelamer"
 
 # title
-ENV TITLE=Steam \
+ENV TITLE=Schoology \
     PIXELFLUX_WAYLAND=true \
     NO_DECOR=true
 
@@ -15,7 +15,7 @@ RUN \
   echo "**** add icon ****" && \
   curl -o \
     /usr/share/selkies/www/icon.png \
-    https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/steam-logo.png && \
+    https://raw.githubusercontent.com/Timetec9/docker-steam/master/PowerSchoolLogos_Vertical-01.png && \
   echo "**** install packages ****" && \
   dpkg --add-architecture i386 && \
   apt-get update && \
