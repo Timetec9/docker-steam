@@ -1,0 +1,16 @@
+services:
+  steam:
+    image: lscr.io/linuxserver/steam:latest
+    container_name: steam
+    network_mode: "host"
+    security_opt:
+      - seccomp:unconfined
+      - apparmor:unconfined
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - /path/to/config:/config
+    shm_size: "1gb"
+    restart: unless-stopped
